@@ -4,6 +4,9 @@ using System.Collections;
 
 namespace com.abhishek.saraf.ZombieSurvival
 {
+    /**
+     * Class to implement the bullet functionality.
+     */
     public class Bullet : MonoBehaviour
     {
         //Drag in the Bullet Emitter from the Component Inspector.

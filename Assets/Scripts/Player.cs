@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
+
+using TMPro;
 
 
 namespace com.abhishek.saraf.ZombieSurvival
@@ -10,6 +13,8 @@ namespace com.abhishek.saraf.ZombieSurvival
     {
         // Attributes.
         public static Player instance;
+
+        public int score;
 
         private int _health = 125;
         private GameObject _playerCursor;
@@ -23,6 +28,10 @@ namespace com.abhishek.saraf.ZombieSurvival
         [SerializeField] private Slider _healthSlider;
 
         [SerializeField] private GameObject _pointer, _pointerEnemy;
+
+        [SerializeField] private TextMeshProUGUI _scoreCounter, _gameOverKillCounter;
+
+        [SerializeField] private GameObject _zombies;
 
         private void Awake()
         {
@@ -86,6 +95,9 @@ namespace com.abhishek.saraf.ZombieSurvival
         // Update is called once per frame
         void Update()
         {
+            _scoreCounter.text = score.ToString();
+            _gameOverKillCounter.text = score.ToString();
+
             CheckForDeath();
 
             if (!isPlayerDead)
@@ -134,6 +146,13 @@ namespace com.abhishek.saraf.ZombieSurvival
         {
             if (_health <= 0)
             {
+                foreach (GameObject zombie in _zombies.GetComponent<ZombieController>().Zombies)
+                {
+                    if (zombie != null) zombie.SetActive(false);
+                }
+
+                _zombies.SetActive(false);
+
                 Destroy(gameObject);
                 isPlayerDead = true;
             }

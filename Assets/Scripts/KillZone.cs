@@ -10,10 +10,12 @@ namespace com.abhishek.saraf.ZombieSurvival
         {
             if (collision.collider.gameObject.tag.Equals("Player"))
             {
+                Debug.Log("Player fell down!");
                 Player.instance.isPlayerDead = true;
             }
             else
             {
+                Debug.Log("Zombie fell down!");
                 Destroy(collision.collider.gameObject);
             }
         }

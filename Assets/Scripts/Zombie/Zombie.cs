@@ -18,8 +18,14 @@ namespace com.abhishek.saraf.ZombieSurvival
 
             if (_health <= 0)
             {
-                Destroy(gameObject);
+                KillZombie();
             }
+        }
+
+        private void KillZombie()
+        {
+            Player.instance.score += 1;
+            Destroy(gameObject);
         }
 
         private void UpdateHealth()

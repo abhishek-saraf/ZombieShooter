@@ -19,6 +19,11 @@ namespace com.abhishek.saraf.ZombieSurvival
 
         private List<GameObject> _zombies;
 
+        public List<GameObject> Zombies
+        {
+            get { return _zombies; }
+        }
+
         [SerializeField] private GameObject _player;
 
         // Start is called before the first frame update
