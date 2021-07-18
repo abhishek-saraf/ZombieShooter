@@ -14,7 +14,7 @@ namespace com.abhishek.saraf.ZombieSurvival
         // Singleton instance.
         public static UIController instance;
 
-        // Reference to the HUD.
+        // Reference to the HUD, start panel, game over panel, etc.
         [SerializeField] private GameObject _hud, _startPanel, _gameOverPanel, _playerUIPanel, _player, _zombies;
 
         private bool _isHudEnabled, _gameStarted;

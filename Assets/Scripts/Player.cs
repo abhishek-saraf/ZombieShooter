@@ -59,8 +59,8 @@ namespace com.abhishek.saraf.ZombieSurvival
             // GameObject rifle = Resources.Load<GameObject>("AK-47");
             GameObject rifle = AssetBundleManagerScript.instance.rifle;
 
-            Vector3 pistolPosition = new Vector3(-0.349f, 0.0f, -0.549f);
-            Vector3 riflePosition = new Vector3(-0.287f, 0.207f, -0.485f);
+            Vector3 pistolPosition = new Vector3(-0.349f, 0.5f, -0.549f);
+            Vector3 riflePosition = new Vector3(-0.287f, 0.5f, -0.485f);
 
             Quaternion pistolRotation = Quaternion.Euler(-90.0f, 0.0f, 0.0f);
             Quaternion rifleRotation = gameObject.transform.rotation;
